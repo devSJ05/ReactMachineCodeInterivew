@@ -14,15 +14,12 @@ describe('Accordion Component', () => {
   it('toggles content visibility when Toggle button is clicked', () => {
     render(<Accordion />);
     const toggleButtons = screen.getAllByText('Toggle');
-
-    // Initially, content should not be in the DOM
+    expect(toggleButtons.length).toBe(items.length);
     expect(screen.queryByText(items[0].content)).not.toBeInTheDocument();
 
-    // Click to expand first item
     fireEvent.click(toggleButtons[0]);
     expect(screen.getByText(items[0].content)).toBeInTheDocument();
 
-    // Click again to collapse
     fireEvent.click(toggleButtons[0]);
     expect(screen.queryByText(items[0].content)).not.toBeInTheDocument();
   });
@@ -31,7 +28,6 @@ describe('Accordion Component', () => {
     render(<Accordion />);
     const toggleButtons = screen.getAllByText('Toggle');
 
-    // Click every button one by one and verify only its content is visible
     toggleButtons.forEach((btn, index) => {
       fireEvent.click(btn);
       expect(screen.getByText(items[index].content)).toBeInTheDocument();
