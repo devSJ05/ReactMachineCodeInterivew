@@ -10,7 +10,7 @@ There should be two buttons, one to reset the game and another to submit the gue
 */
 
 import { useState, useEffect } from 'react';
-
+import '../GuessTheNumber/GuessTheNumber.css';
 const GuessTheNumber = () => {
   const [randomNumber, setRandomNumber] = useState(null);
   const [guess, setGuess] = useState('');
@@ -51,14 +51,19 @@ const GuessTheNumber = () => {
 
   return (
     <div className='guess-the-number'>
-      <h1>Guess The Number Component</h1>
-      <p>Guess a number between 1 and 100</p>
-      <input
-        type='text'
-        placeholder='Enter your guess'
-        value={guess}
-        onChange={(e) => setGuess(e.target.value)}
-      />
+      <h4>Guess a number between 1 and 100</h4>
+      <div className='guess-input-element'>
+        <span>Guess input</span>
+        <input
+          type='text'
+          placeholder='Enter your guess'
+          value={guess}
+          id='guess-input'
+          onChange={(e) => setGuess(e.target.value)}
+          aria-label='Guess input'
+        />
+      </div>
+
       <div>
         <button style={{ marginRight: '10px' }} onClick={submitGuess}>
           Submit Guess

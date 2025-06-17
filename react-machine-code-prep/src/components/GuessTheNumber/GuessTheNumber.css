@@ -1,0 +1,10 @@
+#guess-input {
+    margin: 10px;
+    border: 1px solid black;
+}
+
+.guess-input-element{
+    border: 1px solid grey;
+    padding: 5px;
+    margin-bottom: 10px;;
+}
