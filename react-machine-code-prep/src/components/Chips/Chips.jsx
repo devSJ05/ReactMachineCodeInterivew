@@ -5,7 +5,7 @@ When the user clicks on the remove button, the chip should be removed.
 */
 
 import { useState } from 'react';
-
+import '../Chips/Chips.css';
 const Chips = () => {
   const [inputValue, setInputValue] = useState('');
   const [chips, setChips] = useState([]);
@@ -31,19 +31,21 @@ const Chips = () => {
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={handleKeyDown}
       />
-      {chips.map((chip, index) => {
-        return (
-          <div className='chip-wrapper' key={index}>
-            <div className='chip'>{chip}</div>
-            <button
-              className='remove-chip'
-              onClick={() => handleRemoveChip(index)}
-            >
-              Remove
-            </button>
-          </div>
-        );
-      })}
+      <div className='chips-container'>
+        {chips.map((chip, index) => {
+          return (
+            <div className='chip-wrapper' key={index}>
+              <div className='chip'>{chip}</div>
+              <button
+                className='remove-chip'
+                onClick={() => handleRemoveChip(index)}
+              >
+                Remove
+              </button>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

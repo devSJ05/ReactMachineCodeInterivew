@@ -1,0 +1,17 @@
+.chips-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chip{
+    width: 100px;
+    margin: 10px;;
+}
+
+.chip-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}
