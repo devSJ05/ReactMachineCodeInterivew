@@ -9,20 +9,23 @@ const PasswordInput = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className='container'>
-      <input
-        type={showPassword ? 'text' : 'password'}
-        placeholder='Enter your password'
-        className='input'
-      />
-      <button
-        type='button'
-        onClick={() => setShowPassword(!showPassword)}
-        className='button'
-      >
-        {showPassword ? 'Hide' : 'Show'}
-      </button>
-    </div>
+    <>
+      <h1>Password Input</h1>
+      <div className='container'>
+        <input
+          type={showPassword ? 'text' : 'password'}
+          placeholder='Enter your password'
+          className='input'
+        />
+        <button
+          type='button'
+          onClick={() => setShowPassword(!showPassword)}
+          className='button'
+        >
+          {showPassword ? 'Hide' : 'Show'}
+        </button>
+      </div>
+    </>
   );
 };
 
