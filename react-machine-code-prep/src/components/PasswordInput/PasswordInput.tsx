@@ -4,7 +4,7 @@ Have a button beside the input field to toggle the visibility of the password.
 
 */
 import { useState } from 'react';
-
+import '../PasswordInput/PasswordInput.css';
 const PasswordInput = () => {
   const [showPassword, setShowPassword] = useState(false);
 
